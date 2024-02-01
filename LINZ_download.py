@@ -2,6 +2,7 @@
 # has search functionality for date and geometry
 # use eodag pystac together?
 
+"""
 from eodag import EODataAccessGateway
 from eodag.plugins.search.qssearch import QueryStringSearch
 
@@ -36,4 +37,25 @@ if search_results:
 
 else:
     print("No products found matching the search criteria.")
+
+"""
+
+
+
+
+
+from pystac_client import Client
+
+LINZclient = Client.open("https://nz-imagery.s3-ap-southeast-2.amazonaws.com/catalog.json")
+
+search = LINZclient.search(
+    bbox=[175.2,-36,175.6,-36.4]
+)
+print(f"{search.matched()} items found")
+
+
+for item in search.items():
+    print(item.id)
+
+
 

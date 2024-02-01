@@ -1,7 +1,11 @@
 
 # Peps has half data for some years (ex. 2023) and shows errors for others (ex. 2021)
 # ONDA does not have S2 data for aotea
-# sentinelsat is not recognized anymore as the previous website was shut down in Oct 2023
+# sentinelsat is not recognized anymore as the previous copernicus website was shut down in Oct 2023
+
+# FOR S2_MSI_L1C
+# 2015 search results - 12 on creodias
+# 2016 search results - 18 on creodias
 # 2017 search results - 44 on creodias
 # 2018 search results - 46 on creodias
 # 2019 search results - 92 on creodias
@@ -9,6 +13,16 @@
 # 2021 search results - 96 on creodias
 # 2022 search results - 50 on creodias
 # 2023 search results - 44 on creodias
+
+# FOR S2_MSI_L2A
+# 2017 search results - 0 on creodias
+# 2018 search results - 20 on creodias
+# 2019 search results - 105 on creodias
+# 2020 search results - 110 on creodias
+# 2021 search results - 110 on creodias
+# 2022 search results - 48 on creodias
+# 2023 search results - 44 on creodias
+
 
 ################ SEARCH #######################
 from eodag import EODataAccessGateway
@@ -18,8 +32,8 @@ dag.set_preferred_provider("creodias")
 # Carry out the search and download
 search_criteria = {
     "productType": "S2_MSI_L1C",
-    "start": "2017-11-01",
-    "end": "2017-12-31",
+    "start": "2015-11-01",
+    "end": "2015-12-31",
     "geom": {"lonmin": 175.2, "latmin": -36, "lonmax": 175.6, "latmax": -36.4}
 }
 
@@ -36,7 +50,7 @@ setup_logging(3)
 #Setup user credentials and directory
 dag = EODataAccessGateway()
 dag.set_preferred_provider("creodias")
-dag.providers_config["creodias"].auth.credentials["totp"] = "854632"
+dag.providers_config["creodias"].auth.credentials["totp"] = "141565"  #update token and run immediately
 
 save_dir = "C:/Users/ewil195/Documents/S2"
 if not os.path.isdir(save_dir):
@@ -45,8 +59,8 @@ if not os.path.isdir(save_dir):
 # Carry out the search and download
 search_criteria = {
     "productType": "S2_MSI_L1C",
-    "start": "2022-11-01",
-    "end": "2022-12-31",
+    "start": "2016-11-01",
+    "end": "2016-12-31",
     "geom": {"lonmin": 175.2, "latmin": -36, "lonmax": 175.6, "latmax": -36.4}
 }
 
