@@ -4,10 +4,9 @@ from shapely.geometry import shape
 import tarfile
 import rasterio
 from rasterio.mask import mask
-from rasterio.plot import show
-from rasterio.windows import Window
 import glob
 import sys
+import numpy as np
 
 sys.path.append("C:/Users/ewil195/PycharmProjects/aotea_landslides")
 from data_handling import reproject_raster
@@ -49,36 +48,41 @@ def extract_tar(tar_file, extract_folder):
 
 
 def clip_raster_aoi(raster_file, aoi_geom, output_file):
+    # Open the raster file
     with rasterio.open(raster_file) as src:
+        # Clip the raster to the AOI geometry
         clipped_img, clipped_transform = mask(src, [aoi_geom], crop=True)
+
+        # Update metadata for the clipped image
         clipped_meta = src.meta.copy()
         clipped_meta.update({
             "driver": "GTiff",
             "height": clipped_img.shape[1],
             "width": clipped_img.shape[2],
             "transform": clipped_transform})
-    with rasterio.open(output_file, "w", **clipped_meta) as dst:
-        dst.write(clipped_img)
+
+        # Save the clipped raster to the output file
+        with rasterio.open(output_file, "w", **clipped_meta) as dst:
+            dst.write(clipped_img)
     print("Clipped raster saved to:", output_file)
 
 
-def clip_tar_raster(tar_file, extract_folder, aoi_geom, output_folder):
+def clip_tar_raster(tar_file, extract_folder, aoi_geom):
     extract_tar(tar_file, extract_folder)
 
     band_paths = glob.glob(os.path.join(extract_folder, "*.TIF"))
     for j in band_paths:
-        print(j)
         new_fpath = j.split(".")[0]+"_rproj.TIF"
-        print(new_fpath)
-        with rasterio.open(j) as src:
-            reproject_raster(src, new_fpath, 2193)
+        reproject_raster(j, new_fpath)
+        os.remove(j)
 
     band_paths = glob.glob(os.path.join(extract_folder, "*_rproj.TIF"))
     for i in band_paths:
-        print(i)
-        band_name = os.path.basename(i)
-        output_file = os.path.join(output_folder, band_name)
-        clip_raster_aoi(i, aoi_geom, output_file)
+        new_fpath = i.split(".")[0]+"_clipped.TIF"
+        clip_raster_aoi(i, aoi_geom, new_fpath)
+        os.remove(i)
+
+
 
 
 
