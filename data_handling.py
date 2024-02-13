@@ -1,8 +1,8 @@
 import rasterio
 from rasterio.warp import calculate_default_transform, reproject, Resampling
 
-def reproject_raster(input_file, output_file, dst_crs):
-    with rasterio.open(input_file) as src:
+def reproject_raster(src, output_file, dst_crs):
+    with rasterio.open(output_file, "w", **src.meta) as dst:
         transform, width, height = calculate_default_transform(src.crs,
                                                                dst_crs,
                                                                src.width,
@@ -14,13 +14,6 @@ def reproject_raster(input_file, output_file, dst_crs):
             "transform": transform,
             "width": width,
             "height": height})
-    with rasterio.open(output_file, 'w', **kwargs) as dst:
-        reproject(
-            source=rasterio.band(src, 1),
-            destination=rasterio.band(dst, 1),
-            src_transform=src.transform,
-            src_crs=src.crs,
-            dst_transform=transform,
-            dst_crs=dst_crs,
-            resampling=Resampling.nearest)
+
+    dst.write(src.read(), indexes=1)
     print("Reprojected raster saved to:", output_file)

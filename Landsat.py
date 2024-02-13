@@ -64,16 +64,18 @@ def clip_raster_aoi(raster_file, aoi_geom, output_file):
 
 def clip_tar_raster(tar_file, extract_folder, aoi_geom, output_folder):
     extract_tar(tar_file, extract_folder)
-    band_paths = glob.glob(os.path.join(extract_folder, "*.tif"))
-    print(band_paths)
+
+    band_paths = glob.glob(os.path.join(extract_folder, "*.TIF"))
     for j in band_paths:
-        new_fpath = j.split(".")[0]+"_r.tif"
+        print(j)
+        new_fpath = j.split(".")[0]+"_rproj.TIF"
+        print(new_fpath)
         with rasterio.open(j) as src:
             reproject_raster(src, new_fpath, 2193)
-        os.remove(j)
-    band_paths = glob.glob(os.path.join(extract_folder, "*.tif"))
-    print(band_paths)
+
+    band_paths = glob.glob(os.path.join(extract_folder, "*_rproj.TIF"))
     for i in band_paths:
+        print(i)
         band_name = os.path.basename(i)
         output_file = os.path.join(output_folder, band_name)
         clip_raster_aoi(i, aoi_geom, output_file)
