@@ -17,7 +17,6 @@ if not os.path.exists(tmp_dir):
 aoi_path = os.path.join(vector_base_dir,
                         "Aotea_AOI.shp")
 aotea_aoi = read_shapefile(aoi_path)
-print("AOI:", aotea_aoi)
 
 
 # Import Landsat Data
@@ -28,8 +27,7 @@ if not os.path.exists(landsat_ard_dir):
 tar_file = os.path.join(img_base_dir,
                         "Landsat/2023/LC08_L1TP_073085_20231101_20231109_02_T1.tar")
 
-
-clip_tar_raster(tar_file, tmp_dir, aotea_aoi, landsat_ard_dir)
+clip_tar_raster(tar_file, tmp_dir, aotea_aoi)
 
 
 # Functions - Apply Scaling Factors
