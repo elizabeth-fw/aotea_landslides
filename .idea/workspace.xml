@@ -6,8 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="2bf3118b-d85e-4dd1-93e4-635671db2606" name="Changes" comment="Importing landsat data">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Landsat.py" beforeDir="false" afterPath="$PROJECT_DIR$/Landsat.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data_handling.py" beforeDir="false" afterPath="$PROJECT_DIR$/data_handling.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -110,7 +108,7 @@
       <workItem from="1706568635184" duration="623000" />
       <workItem from="1706749243565" duration="5675000" />
       <workItem from="1707785566534" duration="11937000" />
-      <workItem from="1707797587177" duration="2427000" />
+      <workItem from="1707797587177" duration="2481000" />
     </task>
     <task id="LOCAL-00001" summary="setup">
       <option name="closed" value="true" />
@@ -176,7 +174,15 @@
       <option name="project" value="LOCAL" />
       <updated>1707797553070</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Importing landsat data">
+      <option name="closed" value="true" />
+      <created>1707800034933</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1707800034933</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
