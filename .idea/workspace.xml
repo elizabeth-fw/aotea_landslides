@@ -6,9 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="2bf3118b-d85e-4dd1-93e4-635671db2606" name="Changes" comment="Importing landsat data">
       <change beforePath="$PROJECT_DIR$/.idea/aotea_landslides.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/aotea_landslides.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Landsat.py" beforeDir="false" afterPath="$PROJECT_DIR$/Landsat.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data_handling.py" beforeDir="false" afterPath="$PROJECT_DIR$/data_handling.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -35,6 +35,11 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="main" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="GitHubPullRequestSearchHistory">{
@@ -46,8 +51,8 @@
   <component name="GithubPullRequestsUISettings">
     <option name="selectedUrlAndAccountId">
       <UrlAndAccount>
-        <option name="accountId" value="396c17d7-8567-4dfb-883f-af1185f5b1ca" />
-        <option name="url" value="https://github.com/elizabeth-fw/aotea_landslides" />
+        <option name="accountId" value="60432e92-e179-40c6-a054-6053eaf87477" />
+        <option name="url" value="https://github.com/elizabeth-fw/aotea_landslides.git" />
       </UrlAndAccount>
     </option>
   </component>
@@ -65,13 +70,15 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Python.Landsat.executor": "Run",
+    "Python.data_handling.executor": "Run",
     "Python.image_download.executor": "Run",
     "Python.main.executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "main",
-    "last_opened_file_path": "C:/Users/tdow214/OneDrive - The University of Auckland/Documents/GitHub/aotea_landslides",
+    "git-widget-placeholder": "elizabeth-test",
+    "last_opened_file_path": "C:/Users/ewil195/PycharmProjects/aotea_landslides/S2_download.py",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -84,6 +91,7 @@
   <component name="RunManager">
     <configuration default="true" type="PythonConfigurationType" factoryName="Python">
       <module name="aotea_landslides" />
+      <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
@@ -141,8 +149,10 @@
       <workItem from="1706568635184" duration="623000" />
       <workItem from="1706749243565" duration="5675000" />
       <workItem from="1707785566534" duration="11937000" />
-      <workItem from="1707797587177" duration="2481000" />
+      <workItem from="1707797587177" duration="2615000" />
+      <workItem from="1707862545502" duration="607000" />
       <workItem from="1707801187602" duration="6078000" />
+      <workItem from="1708293946692" duration="9542000" />
     </task>
     <task id="LOCAL-00001" summary="setup">
       <option name="closed" value="true" />
@@ -216,7 +226,15 @@
       <option name="project" value="LOCAL" />
       <updated>1707800034933</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Importing landsat data">
+      <option name="closed" value="true" />
+      <created>1707800091259</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1707800091259</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
